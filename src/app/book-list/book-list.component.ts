@@ -9,9 +9,11 @@ import { Book } from '../shared/book';
 })
 export class BookListComponent {
   books: Book[] = [];
-  @Output() selectBook = new EventEmitter<Book>();
+  bookmode: Book | null = null;
+  //@Output() selectClickBook = new EventEmitter<Book>();
 
   constructor() {
+    this.bookmode = null;
     this.books = [
       {
         isbn: '12345',
@@ -34,7 +36,20 @@ export class BookListComponent {
     ];
   }
 
+  showList() {
+    this.bookmode = null;
+  }
+
+  showDetails(book: Book) {
+    console.log("doSelect-Event:");
+    console.log(book);
+    this.bookmode = book;
+  }
+
   doSelect(book: Book) {
-    this.selectBook.emit(book);
+    console.log("doSelect-Event:");
+    console.log(book);
+    this.bookmode = book;
+    //this.selectBook.emit(book);
   }
 }

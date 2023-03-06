@@ -7,13 +7,14 @@ import { Book } from './shared/book';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  book: Book | null = null;
-
-  showList() {
-    this.book = null;
-  }
-
-  showDetails(book: Book) {
-    this.book = book;
-  }
+  // // book ist vom Interface-Type: Book oder null
+  // book: Book | null = null;
+  // // book wird null und damit wieder die Liste angezeigt
+  // showList() {
+  //   this.book = null;
+  // }
+  // // book bekommt das gesamte Objekt eines Books übegeben
+  // showDetails(book: Book) {
+  //   this.book = book;
+  // }
 }
